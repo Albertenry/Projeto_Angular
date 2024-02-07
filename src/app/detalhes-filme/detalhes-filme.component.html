@@ -1,0 +1,9 @@
+<div *ngIf="filme">
+  <h2>{{ filme.title }}</h2>
+  <img [src]="filmesService.getCapaFilme(filme.poster_path)" alt="{{ filme.title }} Capa">
+  <p>{{ filme.overview }}</p>
+  <p>Autor: {{ filme.author }}</p>
+  <p>Ano de Lançamento: {{ filme.release_year }}</p>
+  <p>Aceitação do Público: {{ filme.audience_acceptance }}</p>
+  <button (click)="voltar()">Voltar</button>
+</div>

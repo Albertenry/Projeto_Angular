@@ -1,0 +1,72 @@
+
+<div class="banner" *ngIf="!detalhesVisiveis">
+  <img [src]="filmesService.getCapaFilme(filmes[0]?.poster_path)" alt="{{ filmes[0]?.title }} Capa">
+  <h2>{{ filmes[0]?.title }}</h2>
+</div>
+
+<div id="detalhesContainer" *ngIf="detalhesVisiveis" class="detalhes-container">
+  <div class="detalhes-container">
+    <div class="imagem-col">
+      <img [src]="filmesService.getCapaFilme(filmeSelecionado[0]?.poster_path)"
+        alt="{{ filmeSelecionado[0]?.title }} Capa">
+    </div>
+    <div class="detalhes-col">
+      <h2>{{ filmeSelecionado[0]?.title }}</h2>
+      <p>{{ filmeSelecionado[0]?.overview }}</p>
+      <p>Data de Lançamento: {{ filmeSelecionado[0]?.release_date }}</p>
+      <p>Avaliação Média: {{ filmeSelecionado[0]?.vote_average }}</p>
+      <p>Duração: {{ filmeSelecionado[0]?.runtime }} minutos</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Filmes Lançamentos</h3>
+  <div class="filme-container custom-scrollbar">
+    <div class="scroll-wrapper">
+      <div class="film-list" *ngFor="let filme of filmes.slice(1, 10)" class="card" (click)="verDetalhes(filme)">
+        <div class="card">
+          <img [src]="filmesService.getCapaFilme(filme.poster_path)" alt="{{ filme.title }} Capa">
+          <div class="info">
+            <h4>{{ filme.title }}</h4>
+            <button (click)="verDetalhes(filme); scrollParaDetalhes()">Ver Detalhes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Filmes Preferidos</h3>
+  <div class="filme-container custom-scrollbar">
+    <div class="scroll-wrapper">
+      <div class="film-list" *ngFor="let filme of filmes.slice(11, 20)" class="card" (click)="verDetalhes(filme)">
+        <div class="card">
+          <img [src]="filmesService.getCapaFilme(filme.poster_path)" alt="{{ filme.title }} Capa">
+          <div class="info">
+            <h4>{{ filme.title }}</h4>
+            <button (click)="verDetalhes(filme); scrollParaDetalhes()">Ver Detalhes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Assistir Novamente</h3>
+  <div class="filme-container custom-scrollbar">
+    <div class="scroll-wrapper">
+      <div class="film-list" *ngFor="let filme of filmes.slice(5, 15)" class="card" (click)="verDetalhes(filme)">
+        <div class="card">
+          <img [src]="filmesService.getCapaFilme(filme.poster_path)" alt="{{ filme.title }} Capa">
+          <div class="info">
+            <h4>{{ filme.title }}</h4>
+            <button (click)="verDetalhes(filme); scrollParaDetalhes()">Ver Detalhes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

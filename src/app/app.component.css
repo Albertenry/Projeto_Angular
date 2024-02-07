@@ -1,0 +1,32 @@
+.menu {
+  background: #006ACB;
+  color: #ffff;
+}
+
+.menu a {
+  color: #ffff; 
+  font-size: 16px;
+  text-align: center; 
+}
+
+body {
+    background-color: #12054d; 
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+  h1, p {
+    color: #fff;
+  }
+  
+  .percentage-circle {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+
